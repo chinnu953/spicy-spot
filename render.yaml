@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: spicy-spot
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: ADMIN_KEY
+        sync: false
